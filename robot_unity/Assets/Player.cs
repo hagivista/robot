@@ -18,7 +18,6 @@ public class Player : MonoBehaviour
         Move(); // 移動処理
         Jump(); // ジャンプ処理
     }
-
     // プレイヤーの移動処理
     void Move()
     {
@@ -29,7 +28,7 @@ public class Player : MonoBehaviour
     // プレイヤーのジャンプ処理
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded) // スペースキーが押され、かつ地面に接している場合
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump")) && isGrounded) // スペースキーまたはゲームパッドのジャンプボタンが押され、かつ地面に接している場合
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce); // ジャンプ力を加える
         }
