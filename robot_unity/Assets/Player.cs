@@ -45,6 +45,16 @@ public class Player : MonoBehaviour
         {
             player_rotation = Quaternion.Euler(-89.98f, -90, 0);
         }
+
+        // アニメーション移行
+        if (move != 0)
+        {
+            GetComponent<Animator>().SetBool("isWalking", true);
+        }
+        else
+        {
+            GetComponent<Animator>().SetBool("isWalking", false);
+        }
     }
 
     // プレイヤーのジャンプ処理
@@ -53,7 +63,9 @@ public class Player : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump")) && isGrounded) // スペースキーまたはゲームパッドのジャンプボタンが押され、かつ地面に接している場合
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce); // ジャンプ力を加える
+            GetComponent<Animator>().SetTrigger("jump"); // ジャンプアニメーション
         }
+
     }
 
     // 地面に接触したときの処理
