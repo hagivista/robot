@@ -47,9 +47,16 @@ public class Player : MonoBehaviour
         }
 
         // アニメーション移行
-        if (move != 0)
+        if (move != 0) // 移動中かつ地面に接している場合
         {
-            GetComponent<Animator>().SetBool("isWalking", true);
+            // プレイヤーの足元にレイキャストを飛ばし、地面との距離を測る
+            RaycastHit2D hit = Physics2D.Raycast(transform.position,
+                                Vector2.down, 0.1f, LayerMask.GetMask("Ground"));
+            isGrounded = hit.collider != null; // 地面に接しているかどうか
+            if (isGrounded)
+            {
+                GetComponent<Animator>().SetBool("isWalking", true);
+            }
         }
         else
         {
@@ -82,7 +89,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground")) // 地面から離れた場合
         {
-            isGrounded = false; // 地面に接しているフラグを下げる
+            // isGrounded = false; // 地面に接しているフラグを下げる
         }
     }
 }

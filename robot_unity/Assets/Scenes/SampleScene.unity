@@ -407,7 +407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7a650c656fbbfcb4a8ebb2df3e4f20cf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.281
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7a650c656fbbfcb4a8ebb2df3e4f20cf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -584,7 +584,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.35}
-  m_Size: {x: 0.48, y: 0.84}
+  m_Size: {x: 0.45, y: 0.68}
   m_Direction: 0
 --- !u!1 &832575517
 GameObject:
