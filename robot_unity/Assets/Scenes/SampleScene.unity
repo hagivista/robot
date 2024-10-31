@@ -407,7 +407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7a650c656fbbfcb4a8ebb2df3e4f20cf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.281
+      value: 0.868
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7a650c656fbbfcb4a8ebb2df3e4f20cf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -647,7 +647,7 @@ GameObject:
   - component: {fileID: 1455437751}
   - component: {fileID: 1455437750}
   - component: {fileID: 1455437753}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Open Sprite Shape
   m_TagString: Ground
   m_Icon: {fileID: 0}

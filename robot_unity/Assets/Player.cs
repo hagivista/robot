@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     public float moveSpeed = 5f; // 移動速度
     public float jumpForce = 5f; // ジャンプ力
     private bool isGrounded; // 地面に接しているかどうか
+    private bool isJumping; // ジャンプ中かどうか
     private GameObject playerrig; // PlayerのGameObject
 
     private Rigidbody2D rb; // Rigidbody2D コンポーネント
@@ -71,6 +72,7 @@ public class Player : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce); // ジャンプ力を加える
             GetComponent<Animator>().SetTrigger("jump"); // ジャンプアニメーション
+            GetComponent<Animator>().SetBool("isGrounded", false);
         }
 
     }
@@ -81,6 +83,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground")) // 地面に接触した場合
         {
             isGrounded = true; // 地面に接しているフラグを立てる
+            GetComponent<Animator>().SetBool("isGrounded", true);
         }
     }
 
