@@ -27,10 +27,7 @@ public class Player : MonoBehaviour
     }
     void LateUpdate()
     {
-        float move = Input.GetAxis("Horizontal"); // 水平方向の入力を取得
-
-        // プレイヤーの向きを変える
-        playerrig.transform.rotation = player_rotation;
+        playerrig.transform.rotation = player_rotation; // プレイヤーの向きを変える
     }
     // プレイヤーの移動処理
     void Move()

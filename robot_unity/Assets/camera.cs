@@ -8,6 +8,12 @@ public class CameraFollow : MonoBehaviour
 
     void LateUpdate()
     {
+        FollowTarget(smoothSpeed);
+    }
+
+    void FollowTarget(float smoothSpeed)
+    {
+        // Playerの位置に追従
         Vector3 desiredPosition = new Vector3(target.position.x + offset.x, target.position.y + offset.y, transform.position.z);
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
         transform.position = smoothedPosition;
